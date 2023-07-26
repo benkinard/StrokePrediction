@@ -17,11 +17,12 @@
     <form class="personal-health-form" enctype="multipart/form-data" action="/predict" method="post">
         <div class="health-info-field">
             <label for="age">Age</label>
-            <input type="number" name="age" id="age">
+            <input type="number" name="age" id="age" required>
         </div>
         <div class="health-info-field">
             <label for="sex">Sex</label>
-            <select name="sex" id="sex">
+            <select name="sex" id="sex" required>
+                <option value="none" disabled hidden selected></option>
                 <option value="Female">Female</option>
                 <option value="Male">Male</option>
                 <option value="Other">Other</option>
@@ -41,7 +42,8 @@
         </div>
         <div class="health-info-field">
             <label for="work">Work Status</label>
-            <select name="work" id="work">
+            <select name="work" id="work" required>
+                <option value="none" disabled hidden selected></option>
                 <option value="Private">Private</option>
                 <option value="Self-employed">Self-Employed</option>
                 <option value="children">Children</option>
@@ -51,28 +53,31 @@
         </div>
         <div class="health-info-field">
             <label for="residence">Residence Type</label>
-            <select name="residence" id="residence">
+            <select name="residence" id="residence" required>
+                <option value="none" disabled hidden selected></option>
                 <option value="Urban">Urban</option>
                 <option value="Rural">Rural</option>
             </select>
         </div>
         <div class="health-info-field">
             <label for="glucose">Average Glucose Level</label>
-            <input type="number" name="glucose" id="glucose">
+            <input type="number" name="glucose" id="glucose" placeholder="Optional">
         </div>
         <div class="health-info-field">
             <label for="bmi">BMI</label>
-            <input type="number" name="bmi" id="bmi">
+            <input type="number" name="bmi" id="bmi" placeholder="Optional">
         </div>
         <div class="health-info-field">
             <label for="smoking">Smoking Status</label>
             <select name="smoking" id="smoking">
+                <option value="none" disabled hidden selected></option>
                 <option value="Unknown">Unknown</option>
                 <option value="never smoked">Never smoked</option>
                 <option value="formerly smoked">Used to smoke</option>
                 <option value="smokes">Currently smoke</option>
             </select>
         </div>
+        <button type="submit">Submit</button>
     </form>
     {% endblock %}
 </body>
