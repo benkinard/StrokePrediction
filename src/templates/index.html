@@ -19,6 +19,60 @@
             <label for="age">Age</label>
             <input type="number" name="age" id="age">
         </div>
+        <div class="health-info-field">
+            <label for="sex">Sex</label>
+            <select name="sex" id="sex">
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="health-info-field">
+            <label for="marital-status">Married</label>
+            <input type="checkbox" name="marital-status" id="marital-status">
+        </div>
+        <div class="health-info-field">
+            <label for="heart-disease">Heart Disease</label>
+            <input type="checkbox" name="heart-disease" id="heart-disease">
+        </div>
+        <div class="health-info-field">
+            <label for="hypertension">Hypertension</label>
+            <input type="checkbox" name="hypertension" id="hypertension">
+        </div>
+        <div class="health-info-field">
+            <label for="work">Work Status</label>
+            <select name="work" id="work">
+                <option value="Private">Private</option>
+                <option value="Self-employed">Self-Employed</option>
+                <option value="children">Children</option>
+                <option value="Govt_job">Govt Employee</option>
+                <option value="Never_worked">Never Worked</option>
+            </select>
+        </div>
+        <div class="health-info-field">
+            <label for="residence">Residence Type</label>
+            <select name="residence" id="residence">
+                <option value="Urban">Urban</option>
+                <option value="Rural">Rural</option>
+            </select>
+        </div>
+        <div class="health-info-field">
+            <label for="glucose">Average Glucose Level</label>
+            <input type="number" name="glucose" id="glucose">
+        </div>
+        <div class="health-info-field">
+            <label for="bmi">BMI</label>
+            <input type="number" name="bmi" id="bmi">
+        </div>
+        <div class="health-info-field">
+            <label for="smoking">Smoking Status</label>
+            <select name="smoking" id="smoking">
+                <option value="Unknown">Unknown</option>
+                <option value="never smoked">Never smoked</option>
+                <option value="formerly smoked">Used to smoke</option>
+                <option value="smokes">Currently smoke</option>
+            </select>
+        </div>
     </form>
     {% endblock %}
 </body>
