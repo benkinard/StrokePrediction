@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stroke Detection</title>
+</head>
+
+<body>
+    {% extends 'header.html' %}
+
+    {% block body %}
+    <h1>Detect Early Signs of Potential Stroke</h1>
+    <p>Fill out the information below, and discover if you are considered likely to experience a stroke in the near future.</p>
+    <p>NOTE: This service is simply identifying individuals with similar health statuses to those who have experienced strokes. It is NOT predicting that you WILL have a Stroke. If you are identified as someone likely to experience a Stroke in the near future, it is recommended you reach out to a medical professional for further evaluation and/or preventative measures.</p>
+
+    <form class="personal-health-form" enctype="multipart/form-data" action="/predict" method="post">
+        <div class="health-info-field">
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age">
+        </div>
+    </form>
+    {% endblock %}
+</body>
+</html>
