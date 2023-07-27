@@ -17,12 +17,12 @@ def predict():
     expected_fields_in_actual = [expected in request.form.keys() for expected in expected_req_fields_to_ui_map.keys()]
     if not all(expected_fields_in_actual):
         missing_field = list(expected_req_fields_to_ui_map.keys())[expected_fields_in_actual.index(False)]
-        flash(f"Please fill out {expected_req_fields_to_ui_map[missing_field]} field", "error")
+        flash(f"Please fill out \"{expected_req_fields_to_ui_map[missing_field]}\" field", "error")
 
     # Create person object from form data
     age = int(request.form['age'])
     sex = request.form['sex']
-    is_married = 'marital-status' in request.form.keys()
+    ever_married = 'marital-status' in request.form.keys()
     has_heart_disease = 'heart-disease' in request.form.keys()
     has_hypertension = 'hypertension' in request.form.keys()
     work_type = request.form['work']
@@ -31,8 +31,11 @@ def predict():
     bmi = None if request.form['bmi'] == '' else float(request.form['bmi'])
     smoking_status = request.form['smoking']
 
-    person = Person(age, sex, is_married, has_heart_disease, has_hypertension, work_type, residence_type,
+    person = Person(age, sex, ever_married, has_heart_disease, has_hypertension, work_type, residence_type,
                     smoking_status, avg_glucose_level, bmi)
+
+    # Make prediction
+    X = person.get_info()
 
     return "<h1>Prediction Landing Page</h1>"
 
