@@ -1,3 +1,4 @@
+import dill
 from flask import Flask, flash, render_template, request
 from person import Person
 
@@ -34,10 +35,14 @@ def predict():
     person = Person(age, sex, ever_married, has_heart_disease, has_hypertension, work_type, residence_type,
                     smoking_status, avg_glucose_level, bmi)
 
+    # Load model
+    with open('static/model.pkl', 'rb') as pickle:
+        model = dill.load(pickle)
     # Make prediction
     X = person.get_info()
+    is_stroke_likely = model.predict(X)
 
-    return "<h1>Prediction Landing Page</h1>"
+    return f"<h1>Prediction Landing Page</h1>\n<p>Likely to have a stroke: {'Yes' if is_stroke_likely else 'No'}"
 
 
 if __name__ == "__main__":
