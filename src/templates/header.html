@@ -7,7 +7,36 @@
             <a href="https://github.com/benkinard/StrokePrediction" target="_blank">GitHub Repo</a>
         </div>
     </div>
-{% block body %}
-{% endblock %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div id="flashes" class="flashes">
+            {% for category, message in messages %}
+            <div class="{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        <script>
+            var flashes = document.getElementById("flashes");
+            var flashFadeInterval = null;
+            var pauseCount = 0;
+
+            var flashDisappear = function() {
+                pauseCount += 1;
+                currentOpacity = window.getComputedStyle(flashes).opacity;
+                if (currentOpacity > 0) {
+                    if (pauseCount > 1000) {
+                        flashes.style.opacity = currentOpacity - 0.01;
+                    }
+                } else {
+                    clearInterval(flashFadeInterval);
+                    flashes.remove();
+                }
+            }
+
+            flashFadeInterval = setInterval(flashDisappear, 1);
+        </script>
+        {% endif %}
+    {% endwith %}
+    {% block body %}
+    {% endblock %}
 </body>
 </html>
