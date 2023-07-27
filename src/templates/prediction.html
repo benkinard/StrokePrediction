@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stroke Detection</title>
+</head>
+
+<body>
+    {% extends 'header.html' %}
+
+    {% block body %}
+    <h1>Prediction Landing Page</h1>
+    {% if stroke_risk_level %}
+    <p>Stroke Risk Level: {{ stroke_risk_level }}</p>
+    {% endif %}
+    {% if avg_glucose_excluded == True and bmi_excluded == True %}
+    <p>NOTE: You opted to exclude your Average Glucose Level and your Body Mass Index (BMI) from the information you shared. While identifying your risk level is possible without these parameters (hence the result above), for the most reliable results be sure to include this information.</p>
+    {% elif avg_glucose_excluded == True %}
+    <p>NOTE: You opted to exclude your Average Glucose Level from the information you shared. While identifying your risk level is possible without this parameter (hence the result above), for the most reliable results be sure to include this information.</p>
+    {% elif bmi_excluded == True %}
+    <p>NOTE: You opted to exclude your Body Mass Index (BMI) from the information you shared. While identifying your risk level is possible without this parameter (hence the result above), for the most reliable results be sure to include this information.</p>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

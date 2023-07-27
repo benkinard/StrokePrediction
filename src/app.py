@@ -4,7 +4,6 @@ from flask import Flask, flash, redirect, render_template, request, url_for
 from person import Person
 
 # TODO: Handle wait time for prediction to load
-# TODO: Create template HTML file for prediction landing page
 # Configure app
 app = Flask(__name__)
 app.config['SECRET_KEY'] = str(uuid.uuid4())
@@ -51,9 +50,11 @@ def predict():
         model = dill.load(pickle)
     # Make prediction
     X = person.get_info()
-    is_stroke_likely = model.predict(X)[0]
+    stroke_prediction = model.predict(X)[0]
 
-    return f"<h1>Prediction Landing Page</h1>\n<p>Likely to have a stroke: {'Yes' if is_stroke_likely else 'No'}"
+    return render_template('prediction.html', stroke_risk_level='High' if stroke_prediction else 'Low',
+                           avg_glucose_excluded=False if avg_glucose_level else True,
+                           bmi_excluded=False if bmi else True)
 
 
 if __name__ == "__main__":
