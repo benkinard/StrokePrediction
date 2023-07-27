@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stroke Risk Prediction</title>
+    <link rel="stylesheet" href="/static/styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    {% extends 'header.html' %}
+
+    {% block body %}
+    <h1>Determine Your Risk of Having a Stroke</h1>
+    <p>Fill out the information below, and a ML model trained on over 3800 samples will predict your risk to experience a stroke.</p>
+
+    <form class="personal-health-form" enctype="multipart/form-data" action="/predict" method="post">
+        <ul>
+            <li>
+                <input type="number" name="age" id="age" placeholder="Age">
+                <select name="sex" id="sex">
+                    <option value="none" disabled selected>Sex</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Other">Other</option>
+                </select>
+            </li>
+            <li>
+                <div class="bool-input-group">
+                    <div class="bool-input">
+                        <label for="marital-status">Ever Been Married</label>
+                        <input type="checkbox" name="marital-status" id="marital-status">
+                    </div>
+                    <div class="bool-input">
+                        <label for="heart-disease">Heart Disease</label>
+                        <input type="checkbox" name="heart-disease" id="heart-disease">
+                    </div>
+                    <div class="bool-input">
+                        <label for="hypertension">High Blood Pressure</label>
+                        <input type="checkbox" name="hypertension" id="hypertension">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <select name="work" id="work">
+                    <option value="none" disabled selected>Work Type</option>
+                    <option value="Private">Private</option>
+                    <option value="Self-employed">Self-Employed</option>
+                    <option value="children">Children</option>
+                    <option value="Govt_job">Govt Employee</option>
+                    <option value="Never_worked">Never Worked</option>
+                </select>
+                <select name="residence" id="residence">
+                    <option value="none" disabled selected>Residence Type</option>
+                    <option value="Urban">Urban</option>
+                    <option value="Rural">Rural</option>
+                </select>
+                <select name="smoking" id="smoking">
+                    <option value="none" disabled selected>Smoking Status</option>
+                    <option value="Unknown">Unknown</option>
+                    <option value="never smoked">Never smoked</option>
+                    <option value="formerly smoked">Used to smoke</option>
+                    <option value="smokes">Currently smoke</option>
+                </select>
+            </li>
+            <li>
+                <input type="number" name="glucose" id="glucose" placeholder="Average Glucose Level (Optional)">
+                <input type="number" name="bmi" id="bmi" placeholder="BMI (Optional)">
+            </li>
+            <li>
+                <input type="submit" value="Submit"/>
+            </li>
+        </ul>
+    </form>
+
+    <p class="note">NOTE: This service is simply identifying individuals with similar health statuses to those who have experienced strokes. It is NOT guaranteeing that you WILL have a stroke. If you are identified as someone with a high risk to experience a stroke, it is recommended you reach out to a medical professional for further evaluation and/or preventative measures.</p>
+    {% endblock %}
+</body>
+</html>

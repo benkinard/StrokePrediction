@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: arial;
+    height: 100%;
+    background-image: url('brain.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.header-container {
+    background-color: white;
+    border-bottom: 5px solid black;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding 10px 0;
+    margin: 0 auto;
+}
+
+.src-link-and-label {
+    display: flex;
+    align-items: center;
+}
+
+.src-link-and-label label {
+    margin: 0 5px;
+}
+
+.homepage-link {
+    display: flex;
+    align-items: center;
+}
+
+.homepage-link a {
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    padding: 15px 0;
+}
+
+p {
+    text-align: center;
+    padding: 15px 0;
+    font-weight: bold;
+}
+
+.flashes {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    opacity: 1.0;
+}
+
+.flashes div {
+    padding: 20px;
+    width: 10%;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.error {
+    border: 2px solid #F08080;  /* Light Red */
+    background-color: #F08080;
+}
+
+form {
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 600px;
+	padding: 30px;
+	background: #FFFFFF;
+	margin: 20px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+
+form input[type="text"],
+form input[type="number"],
+form select
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 45px;
+}
+
+
+form input[type="submit"]{
+	-moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	background-color: #2CBBBB;
+	border: 1px solid #27A0A0;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+form input[type="submit"]:hover {
+	background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+	background-color:#34CACA;
+}
+
+form .bool-input-group {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+#age::placeholder {
+    color: black;
+}
+
+li {
+    list-style-type: none;
+}
+
+select option.disabled {
+    color: lightgray;
+}
+
+.note {
+    width: 75%;
+    padding: 10px;
+    text-align: left;
+    margin: 0 auto;
+    border-radius: 25px;
+    border: 5px solid black;
+    background-color: white;
+}
+
+.stroke-risk-pred {
+    margin: 50px 0;
+}
+
+.risk-level {
+    padding: 20px;
+    width: 10%;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.risk-level.High {
+    border: 2px solid #F08080;  /* Light Red */
+    background-color: #F08080;
+}
+
+.risk-level.Low {
+    border: 2px solid #90EE90;  /* Light Green */
+    background-color: #90EE90;
+}
