@@ -3,8 +3,11 @@
 <body>
     <div class="header-container">
         <div class="header">
-            <div>Stroke Predictor</div>
-            <a href="https://github.com/benkinard/StrokePrediction" target="_blank">GitHub Repo</a>
+            <div class="homepage-link"><a href="/">Stroke Risk Prediction</a></div>
+            <div class="src-link-and-label">
+                <a id="src-link" href="https://github.com/benkinard/StrokePrediction" target="_blank"><i class="fa fa-github" style="font-size:48px;color:black"></i></a>
+                <label for="src-link">View Repo</label>
+            </div>
         </div>
     </div>
     {% with messages = get_flashed_messages(with_categories=true) %}
