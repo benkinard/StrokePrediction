@@ -20,6 +20,8 @@ def predict():
     if request.form['age'] == '':
         flash("Please fill out \"Age\" field", "error")
         return redirect(url_for('index'))
+    elif int(request.form['age']) < 0:
+        flash("Age cannot be negative", "error")
 
     required_drop_down_fields = {'sex': 'Sex', 'work': 'Work Type', 'residence': 'Residence Type',
                                  'smoking': 'Smoking Status'}
@@ -29,6 +31,17 @@ def predict():
         flash(f"Please fill out \"{required_drop_down_fields[missing_field]}\" field", "error")
 
         return redirect(url_for('index'))
+
+    # Confirm Avg Glucose Level and BMI are not negative values
+    if request.form['glucose'] != '':
+        if float(request.form['glucose']) < 0.0:
+            flash("Avg Glucose Level cannot be negative", "error")
+            return redirect(url_for('index'))
+
+    if request.form['bmi'] != '':
+        if float(request.form['bmi']) < 0.0:
+            flash("BMI cannot be negative", "error")
+            return redirect(url_for('index'))
 
     # Create person object from form data
     age = int(request.form['age'])
