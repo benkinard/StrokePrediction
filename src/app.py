@@ -3,7 +3,7 @@ import uuid
 from flask import Flask, flash, redirect, render_template, request, url_for
 from person import Person
 
-# TODO: Handle wait time for prediction to load
+
 # Configure app
 app = Flask(__name__)
 app.config['SECRET_KEY'] = str(uuid.uuid4())
