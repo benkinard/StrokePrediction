@@ -7,3 +7,8 @@
 __pycache__/
 
 venv/
+
+# Elastic Beanstalk Files
+src/.elasticbeanstalk/*
+!src/.elasticbeanstalk/*.cfg.yml
+!src/.elasticbeanstalk/*.global.yml
