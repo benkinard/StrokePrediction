@@ -96,12 +96,15 @@ greater than the given threshold, then the positive class is predicted, otherwis
 
 The confusion matrices and recall scores for each of the thresholds are displayed below.
 
+*Default Threshold*  
 ![Default Threshold Confusion Matrix](images/default_cm.png)  
 **Recall: 75.81%**
 
+*Youden's J Threshold*  
 ![Youden's J Threshold Confusion Matrix](images/youden_j_cm.png)  
 **Recall: 77.42%**
 
+*Max TPR Within Allowance Threshold*  
 ![Max TPR Within Allowance Threshold Confusion Matrix](images/max_tpr_cm.png)  
 **Recall: 88.71%**
 
