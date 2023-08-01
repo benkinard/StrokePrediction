@@ -1,4 +1,4 @@
-# StrokePrediction
+# StrokePrediction 🧠
 This project deploys a Machine Learning model to predict individuals' risk of experiencing a stroke based on 
 personal health & demographic data. The training data was downloaded from 
 [Kaggle](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset). The model was trained and 
