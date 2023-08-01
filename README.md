@@ -111,9 +111,9 @@ The final model was saved as a [pickle](https://docs.python.org/3/library/pickle
 built, allowing end users to input their health & demographic info and then receive a prediction of their 
 risk level to experience a stroke.
 
-![UI]()
+![UI](images/ui.png)
 
-![Prediction]()
+![Prediction](images/prediction.png)
 
 The Flask application is hosted using [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/). You can 
 find the source code for the application in [src/](src/).
