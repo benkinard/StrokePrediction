@@ -56,11 +56,11 @@ The results were displayed in a heatmap and the optimal parameter combination wa
 - `Class Weight`: 'balanced'
 - `Outlier Handler`: omitted
 
-![GridSearch Heatmap]()
+![GridSearch Heatmap](images/gs_heatmap.png)
 
 This combination of parameters produced an AUC of 0.83 when tested on the validation set.
 
-![Validation Score]()
+![Validation Score](images/best_model_roc.png)
 
 Another 'zoomed-in' grid search was performed, testing the combination of the following SVC parameters:
 
@@ -72,9 +72,9 @@ again displayed in a heatmap and the optimal parameter combination was tested on
 not differ much from the original grid search, so the parameter combination that was originally identified as optimal was 
 chosen for use in the final model.
 
-![Zoomed In Heatmap]()
+![Zoomed In Heatmap](images/zoom_gs_heatmap.png)
 
-![Zoomed In Validation Score]()
+![Zoomed In Validation Score](images/zoom_best_model_roc.png)
 
 ## Results ☑️
 Due to the nature of the problem being addressed (predicting stroke events for individuals), it was determined that Recall 
@@ -96,13 +96,13 @@ greater than the given threshold, then the positive class is predicted, otherwis
 
 The confusion matrices and recall scores for each of the thresholds are displayed below.
 
-![Default Threshold Confusion Matrix]()  
+![Default Threshold Confusion Matrix](images/default_cm.png)  
 **Recall: 75.81%**
 
-![Youden's J Threshold Confusion Matrix]()  
+![Youden's J Threshold Confusion Matrix](images/youden_j_cm.png)  
 **Recall: 77.42%**
 
-![Max TPR Within Allowance Threshold Confusion Matrix]()  
+![Max TPR Within Allowance Threshold Confusion Matrix](images/max_tpr_cm.png)  
 **Recall: 88.71%**
 
 # Deployment ⏯️
