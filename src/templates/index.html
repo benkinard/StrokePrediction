@@ -13,7 +13,7 @@
 
     {% block body %}
     <h1>Determine Your Risk of Having a Stroke</h1>
-    <p>Fill out the information below, and a ML model trained on over 3800 samples will predict your risk to experience a stroke.</p>
+    <p>Fill out the information below, and a ML model trained on over 3800 samples will predict your risk of experiencing a stroke.</p>
 
     <form class="personal-health-form" enctype="multipart/form-data" action="/predict" method="post">
         <ul>
@@ -74,7 +74,7 @@
         </ul>
     </form>
 
-    <p class="note">NOTE: This service is simply identifying individuals with similar health statuses to those who have experienced strokes. It is NOT guaranteeing that you WILL have a stroke. If you are identified as someone with a high risk to experience a stroke, it is recommended you reach out to a medical professional for further evaluation and/or preventative measures.</p>
+    <p class="note">NOTE: This service is NOT guaranteeing that you WILL have a stroke. If you are identified as someone with a high risk of having a stroke, it is recommended you reach out to a medical professional for further evaluation and/or preventative measures.</p>
     {% endblock %}
 </body>
 </html>

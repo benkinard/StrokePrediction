@@ -5,16 +5,16 @@ from person import Person
 
 
 # Configure app
-app = Flask(__name__)
-app.config['SECRET_KEY'] = str(uuid.uuid4())
+application = Flask(__name__)
+application.config['SECRET_KEY'] = str(uuid.uuid4())
 
 
-@app.route("/")
+@application.route("/")
 def index():
     return render_template('index.html')
 
 
-@app.route("/predict", methods=["POST"])
+@application.route("/predict", methods=["POST"])
 def predict():
     # Confirm all required fields are not empty
     if request.form['age'] == '':
@@ -22,6 +22,7 @@ def predict():
         return redirect(url_for('index'))
     elif int(request.form['age']) < 0:
         flash("Age cannot be negative", "error")
+        return redirect(url_for('index'))
 
     required_drop_down_fields = {'sex': 'Sex', 'work': 'Work Type', 'residence': 'Residence Type',
                                  'smoking': 'Smoking Status'}
@@ -62,8 +63,9 @@ def predict():
     with open('static/model.pkl', 'rb') as pickle:
         model = dill.load(pickle)
     # Make prediction
+    decision_threshold = -0.8947129186050686    # Threshold for optimizing Recall
     X = person.get_info()
-    stroke_prediction = model.predict(X)[0]
+    stroke_prediction = model.decision_function(X)[0] > decision_threshold
 
     return render_template('prediction.html', stroke_risk_level='High' if stroke_prediction else 'Low',
                            avg_glucose_excluded=False if avg_glucose_level else True,
@@ -71,4 +73,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run()
