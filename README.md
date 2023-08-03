@@ -118,5 +118,5 @@ risk level to experience a stroke.
 
 ![Prediction](images/prediction.png)
 
-The Flask application is hosted using [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/). You can 
-find the source code for the application in [src/](src/).
+The Flask application is hosted using [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/), and can be found [here](http://strokeriskprediction.us-east-2.elasticbeanstalk.com/). 
+You can find the source code for the application in [src/](src/).
